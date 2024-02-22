@@ -1,0 +1,34 @@
+.carousel-item {
+    background-size: cover;
+    background-position: center;
+    height: 80vh; 
+   
+}
+
+.carousel-item::before {
+    content: ""; /* Create a pseudo-element */
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Place it at the top of the carousel item */
+    left: 0; /* Place it at the left of the carousel item */
+    width: 100%; /* Make it cover the entire width of the carousel item */
+    height: 100%; /* Make it cover the entire height of the carousel item */
+    background-color: rgba(0, 0, 0, 0.3); /* Dark overlay color */
+  }
+  
+.hero-heading {
+    text-align: center;
+    font-size: 5.5rem;
+    margin-top: 180px; 
+    color:  #1f8ce0;
+    /* text-shadow: 0 0 10px rgb(218, 192, 192);  */
+}
+  
+  
+ 
+  @media (max-width: 768px) {
+    .hero-heading {
+      font-size: 2.5rem; 
+    }
+   
+  }
+  
