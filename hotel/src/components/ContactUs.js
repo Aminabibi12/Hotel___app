@@ -3,10 +3,10 @@ import './ContactUs.css'; // Added missing dot to import statement
 
 const Connect = () => {
   return (
-    <div>
-       <div className="card-form" id="contact"> {/* Changed class to className */}
+    <div id="contact" style={{marginBottom:"100px"}} >
+       <div className="card-form"> {/* Changed class to className */}
          <span className="title">Contact Us!</span> {/* Changed class to className */}
-         <form className="form"> {/* Changed class to className */}
+         <form className="form" > {/* Changed class to className */}
            <div className="group"> {/* Changed class to className */}
              <input placeholder="" type="text" required="" />
              <label htmlFor="name">Name</label> {/* Changed for to htmlFor */}

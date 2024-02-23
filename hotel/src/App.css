@@ -360,9 +360,10 @@
   right: 10px;
   cursor: pointer;
   border: none;
+  font-size: 1rem;
 
 }
- 
+
  @media (max-width: 921px) {
    header {
      padding: 14px 41px;

@@ -1,8 +1,8 @@
 .card-form {
-  background-color: #fff;
+  background: radial-gradient(circle at 50% 50%,#0094ff87, rgba(255,193,206,0.78));
   border-radius: 10px;
   padding: 20px;
-  width: 350px;
+  width: 450px;
   max-width: 100%; /* Ensure card width does not exceed viewport width */
   margin: 0 auto; /* Center the card horizontally */
   display: flex;
@@ -45,6 +45,9 @@
   outline: 0;
   width: 100%;
   background-color: transparent;
+}
+.input-placeholder {
+  color: black;
 }
 
 .form .group input:placeholder-shown + label, .form .group textarea:placeholder-shown + label {
