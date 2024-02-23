@@ -1,57 +1,92 @@
-.elem-group {
-    margin: 20px 0;
+/* .booking-row {
+    display: -ms-flexbox; 
+    display: flex;
+    -ms-flex-wrap: wrap; 
+    flex-wrap: wrap;
+    margin: 0 -16px;
+  }
+   */
+  .col-25 {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
   }
   
-  .elem-group.inlined {
-    width: 49%;
-    display: inline-block;
-    /* float: left; */
-    margin-left: 1%;
+  .col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+  }
+  
+  .col-75 {
+    -ms-flex: 75%; /* IE10 */
+    flex: 75%;
+  }
+  
+  .col-25,
+  .col-50,
+  .col-75 {
+    padding: 0 16px;
+  }
+  
+  .booking-form-container {
+    background-color: rgb(205, 149, 93);
+    padding: 0px;
+    border: none;
+    border-radius: .5px;
+    width:700px;
+    height: 580px;
+   
+  }
+
+  .booking-form-container form {
+    text-align: center;
+  }
+  
+  input {
+    width: 50%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
   }
   
   label {
+    margin-bottom: 10px;
     display: block;
-    font-family: 'Nanum Gothic';
-    padding-bottom: 10px;
-    font-size: 1.25em;
   }
   
-  input,
-  select,
-  textarea {
-    border-radius: 2px;
-    border: 2px solid #777;
-    box-sizing: border-box;
-    font-size: 1.25em;
-    font-family: 'Nanum Gothic';
-    width: 100%;
-    padding: 10px;
+  .icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
   }
   
-  .elem-group.inlined input {
-    width: 95%;
-    display: inline-block;
-  }
-  
-  textarea {
-    height: 250px;
-  }
-  
-  hr {
-    border: 1px dotted #ccc;
-  }
-  
-  button {
-    height: 50px;
-    background: orange;
-    border: none;
+  .booking-btn {
+    background-color:  #1f8ce0;
     color: white;
-    font-size: 1.25em;
-    font-family: 'Nanum Gothic';
-    border-radius: 4px;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 23%;
+    border-radius: 0.5rem;
     cursor: pointer;
+    font-size: 17px;
   }
   
-  button:hover {
-    border: 2px solid black;
+  .booking-btn:hover {
+    color: black;
+  }
+  
+  span.price {
+    float: right;
+    color: grey;
+  }
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+  @media (max-width: 800px) {
+    .row {
+      flex-direction: column-reverse;
+    }
+    .col-25 {
+      margin-bottom: 20px;
+    }
   }

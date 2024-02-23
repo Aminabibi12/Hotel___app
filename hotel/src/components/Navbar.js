@@ -1,21 +1,20 @@
+// Navbar.js
 import React, { useState } from 'react';
-import Booking from './Booking'; // Import the BookingForm component
-
+import BookingModal from './BookigModel';
 
 const Navbar = ({ isNavbarActive, toggleNavbar, isDarkMode, toggleDarkMode }) => {
-  const [showBookingForm, setShowBookingForm] = useState(false);
+  const [showBookingModal, setShowBookingModal] = useState(false);
 
-  const openBookingForm = () => {
-    setShowBookingForm(true);
+  const openBookingModal = () => {
+    setShowBookingModal(true);
   };
 
-  const closeBookingForm = () => {
-    setShowBookingForm(false);
+  const closeBookingModal = () => {
+    setShowBookingModal(false);
   };
-
   return (
     <header>
-      <p style={{ color: " var(--main-color)" }}>
+      <p style={{ color: "var(--main-color)" }}>
         <b><span style={{ fontSize: "1.5em" }}>W</span>hispering <span style={{ fontSize: "1.5em" }}>P</span>ines</b>
       </p>
 
@@ -34,13 +33,14 @@ const Navbar = ({ isNavbarActive, toggleNavbar, isDarkMode, toggleDarkMode }) =>
         </div>
       </ul>
       <div>
-        <button className="book-now-button" onClick={openBookingForm}>Book Now</button>
+        <button className="book-now-button" onClick={openBookingModal}>Book Now</button>
       </div>
-      {showBookingForm && (
-        <div className="booking-form-container">
-          <button onClick={closeBookingForm} className="close-btn">X</button>
-          <div className="booking-form-content">
-            <Booking />
+      {showBookingModal && (
+        <div className="booking-modal">
+          <div className="modal-overlay" onClick={closeBookingModal}></div>
+          <div className="modal-content">
+            <button className="close-btn" onClick={closeBookingModal}>X</button>
+            <BookingModal onClose={closeBookingModal} />
           </div>
         </div>
       )}

@@ -1,27 +1,14 @@
 import React, { useState } from 'react';
+import './Booking.css';
 
-function Booking() {
+function Booking({ handleChange, handleSubmit }) {
   const [formData, setFormData] = useState({
     visitor_name: '',
     visitor_email: '',
     visitor_phone: '',
-    total_adults: '',
-    total_children: '',
     checkin: '',
-    checkout: '',
-    room_preference: '',
-    visitor_message: ''
+    checkout: ''
   });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here, you can send formData to your backend
-    console.log(formData);
-  };
 
   const currentDateTime = new Date();
   const year = currentDateTime.getFullYear();
@@ -38,34 +25,34 @@ function Booking() {
   const dateTomorrow = `${year}-${month}-${date}`;
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="elem-group">
-        <label htmlFor="name">Your Name</label>
-        <input
-          type="text"
-          id="name"
-          name="visitor_name"
-          placeholder="John Doe"
-          pattern="[A-Za-z\s]{3,20}"
-          required
-          value={formData.visitor_name}
-          onChange={handleChange}
-        />
-      </div>
-      {/* Other form fields go here */}
-      <div className="elem-group">
-        <label htmlFor="message">Anything Else?</label>
-        <textarea
-          id="message"
-          name="visitor_message"
-          placeholder="Tell us anything else that might be important."
-          required
-          value={formData.visitor_message}
-          onChange={handleChange}
-        ></textarea>
-      </div>
-      <button type="submit">Book The Rooms</button>
-    </form>
+    <div className="booking-form-container">
+    
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="visitor_name">Full Name:</label>
+          <input type="text" id="visitor_name" name="visitor_name" placeholder="John M. Doe" onChange={handleChange} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="visitor_email">Email:</label>
+          <input type="email" id="visitor_email" name="visitor_email" placeholder="john@example.com" onChange={handleChange} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="visitor_phone">Phone:</label>
+          <input type="tel" id="visitor_phone" name="visitor_phone" placeholder="(34) 123-456-789" onChange={handleChange} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="checkin">Check-in Date:</label>
+          <input type="date" id="checkin" name="checkin" min={dateTomorrow} value={formData.checkin} onChange={handleChange} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="checkout">Check-out Date:</label>
+          <input type="date" id="checkout" name="checkout" min={formData.checkin} value={formData.checkout} onChange={handleChange} />
+        </div>
+        <div className="form-group">
+          <button type="submit" className="booking-btn">Submit</button>
+        </div>
+      </form>
+    </div>
   );
 }
 
