@@ -6,7 +6,7 @@ const Contact = () => {
     <section className="contact" >
          
       <div className="contact-box">
-        <h3>Pizza Pie</h3>
+        <h3>Whispering Pines</h3>
         <span>Connect With Us</span>
         <div className="social">
           <a href="#"><i className='bx bxl-facebook' ></i></a>
